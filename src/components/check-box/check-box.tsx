@@ -143,7 +143,7 @@ export class CheckBox {
           class="checkbox-container"
           part="checkbox-container"
         >
-          <img src={checkMark}/>
+          <img class={{checked: !this.checked}} src={checkMark}/>
         </div>
         <label id={this.uuid} class="label-container" part="label-container">
           <slot />
