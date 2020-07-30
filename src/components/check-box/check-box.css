@@ -1,3 +1,17 @@
 :host {
-  display: block;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 0px 1px black;
+  border-radius: 10px;
+  width: 250px;
+  height: 50px;
+}
+
+:host img{
+  padding: 10px;
+  width: 2em;
+  height: 2em;
+}
+:host img.checked{
+  opacity: 0;
 }

@@ -5,8 +5,13 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { CheckboxChecked, } from "./interface";
 export namespace Components {
     interface CheckBox {
+        /**
+          * Tracks wether this component has been checked or not. Unchecked by default. Can be instantiated with a different value because prop is mutable.
+         */
+        "checked": boolean;
     }
 }
 declare global {
@@ -22,6 +27,22 @@ declare global {
 }
 declare namespace LocalJSX {
     interface CheckBox {
+        /**
+          * Tracks wether this component has been checked or not. Unchecked by default. Can be instantiated with a different value because prop is mutable.
+         */
+        "checked"?: boolean;
+        /**
+          * This event should be emitted when the checkbox ingests input from user
+         */
+        "onChanged"?: (event: CustomEvent<CheckboxChecked>) => void;
+        /**
+          * Internal event not exposed
+         */
+        "onCheckboxChecked"?: (event: CustomEvent<void>) => void;
+        /**
+          * Internal Event not exposed
+         */
+        "onCheckboxUnchecked"?: (event: CustomEvent<void>) => void;
     }
     interface IntrinsicElements {
         "check-box": CheckBox;
